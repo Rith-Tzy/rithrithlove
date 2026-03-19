@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevStack — Learn. Build. Ship.</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <!-- ★ External stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Particle Canvas -->
+<canvas id="particles"></canvas>
+
+<!-- ══════════ HEADER ══════════ -->
+<header>
+
+  <!-- Logo with image -->
+  <a class="logo" href="#home">
+    <div class="logo-icon">
+      <img src="images/logo.svg" alt="DevStack logo">
+    </div>
+    Dev<span>Stack</span>
+  </a>
+
+  <!-- Nav -->
+  <nav class="nav-links">
+    <a href="#home">Home</a>
+    <a href="#technologies">Tech</a>
+    <a href="#products">Products</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Search + Login -->
+  <div style="display:flex;align-items:center;gap:1rem;">
+    <div class="search-box">
+      <span class="search-icon">🔍</span>
+      <input type="text" placeholder="Search courses…" id="searchInput">
+    </div>
+    <button class="login-btn" onclick="openLogin()">Login</button>
+  </div>
+
+</header>
+
+
+<!-- ══════════ LOGIN MODAL ══════════ -->
+<div class="modal-overlay" id="loginModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeLogin()">✕</button>
+    <h3>Welcome <span>Back</span></h3>
+
+    <div class="form-group">
+      <label>EMAIL</label>
+      <input type="email" placeholder="dev@example.com">
+    </div>
+    <div class="form-group">
+      <label>PASSWORD</label>
+      <input type="password" placeholder="••••••••">
+    </div>
+
+    <button class="enter-btn" onclick="loginAnim()">⚡ ENTER</button>
+    <p style="text-align:center;color:var(--muted);font-size:.8rem;margin-top:1rem;">
+      Don't have an account? <a href="#" style="color:var(--accent)">Sign up</a>
+    </p>
+  </div>
+</div>
+
+
+<!-- ══════════ HERO ══════════ -->
+<section id="home">
+
+  <!-- Floating code snippets -->
+  <div class="float-code">&lt;div class="dev"&gt;</div>
+  <div class="float-code">npm install awesome</div>
+  <div class="float-code">const future = () =&gt; {}</div>
+  <div class="float-code">git commit -m "🚀"</div>
+
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="badge-dot"></span> v3.0 — New courses dropped
+    </div>
+    <h1 class="hero-title">
+      Master Modern
+      <span class="line2">Web Development</span>
+    </h1>
+    <p class="hero-sub">
+      From HTML basics to full-stack wizardry. Learn React, Node, Tailwind,
+      Angular &amp; more with hands-on projects.
+    </p>
+    <div class="hero-cta">
+      <button class="btn-primary"
+        onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+        Explore Courses →
+      </button>
+      <button class="btn-outline">Watch Demo ▶</button>
+    </div>
+  </div>
+
+</section>
+
+
+<!-- ══════════ TECH TICKER ══════════ -->
+<section id="technologies">
+  <div class="section-header" style="padding:0 2rem;">
+    <div class="section-label">// technologies</div>
+    <h2 class="section-title">What You'll <span>Master</span></h2>
+  </div>
+
+  <div class="tech-ticker-wrap">
+    <div class="tech-ticker">
+      <!-- Original set -->
+      <div class="tech-card"><div class="tech-icon">🌐</div><div class="tech-name">HTML5</div></div>
+      <div class="tech-card"><div class="tech-icon">🎨</div><div class="tech-name">CSS3</div></div>
+      <div class="tech-card"><div class="tech-icon">⚡</div><div class="tech-name">JavaScript</div></div>
+      <div class="tech-card"><div class="tech-icon">⚛️</div><div class="tech-name">React.js</div></div>
+      <div class="tech-card"><div class="tech-icon">🟢</div><div class="tech-name">Node.js</div></div>
+      <div class="tech-card"><div class="tech-icon">🌊</div><div class="tech-name">Tailwind</div></div>
+      <div class="tech-card"><div class="tech-icon">🐘</div><div class="tech-name">PHP</div></div>
+      <div class="tech-card"><div class="tech-icon">🚌</div><div class="tech-name">Bootstrap</div></div>
+      <div class="tech-card"><div class="tech-icon">🔴</div><div class="tech-name">Angular</div></div>
+      <div class="tech-card"><div class="tech-icon">🗃️</div><div class="tech-name">MySQL</div></div>
+      <div class="tech-card"><div class="tech-icon">🍃</div><div class="tech-name">MongoDB</div></div>
+      <div class="tech-card"><div class="tech-icon">🐍</div><div class="tech-name">Python</div></div>
+      <!-- Duplicate set for seamless infinite scroll -->
+      <div class="tech-card"><div class="tech-icon">🌐</div><div class="tech-name">HTML5</div></div>
+      <div class="tech-card"><div class="tech-icon">🎨</div><div class="tech-name">CSS3</div></div>
+      <div class="tech-card"><div class="tech-icon">⚡</div><div class="tech-name">JavaScript</div></div>
+      <div class="tech-card"><div class="tech-icon">⚛️</div><div class="tech-name">React.js</div></div>
+      <div class="tech-card"><div class="tech-icon">🟢</div><div class="tech-name">Node.js</div></div>
+      <div class="tech-card"><div class="tech-icon">🌊</div><div class="tech-name">Tailwind</div></div>
+      <div class="tech-card"><div class="tech-icon">🐘</div><div class="tech-name">PHP</div></div>
+      <div class="tech-card"><div class="tech-icon">🚌</div><div class="tech-name">Bootstrap</div></div>
+      <div class="tech-card"><div class="tech-icon">🔴</div><div class="tech-name">Angular</div></div>
+      <div class="tech-card"><div class="tech-icon">🗃️</div><div class="tech-name">MySQL</div></div>
+      <div class="tech-card"><div class="tech-icon">🍃</div><div class="tech-name">MongoDB</div></div>
+      <div class="tech-card"><div class="tech-icon">🐍</div><div class="tech-name">Python</div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════ PRODUCTS ══════════ -->
+<section id="products">
+  <div class="section-header">
+    <div class="section-label">// courses &amp; products</div>
+    <h2 class="section-title">Level Up Your <span>Skills</span></h2>
+  </div>
+  <div class="products-grid" id="productsGrid"></div>
+  <div class="pagination"    id="pagination"></div>
+</section>
+
+
+<!-- ══════════ CONTACT ══════════ -->
+<section id="contact">
+  <div class="section-header">
+    <div class="section-label">// get in touch</div>
+    <h2 class="section-title">Let's <span>Connect</span></h2>
+  </div>
+
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h3>Have a question?</h3>
+      <p>Whether you're stuck on a bug or want to enroll in a custom bootcamp,
+         our team is here to help you ship great code.</p>
+      <div class="contact-detail"><span class="icon">📧</span> hello@devstack.io</div>
+      <div class="contact-detail"><span class="icon">📞</span> +1 (888) DEV-CODE</div>
+      <div class="contact-detail"><span class="icon">📍</span> San Francisco, CA</div>
+      <div class="contact-detail"><span class="icon">⏰</span> Mon–Fri, 9AM–6PM PST</div>
+    </div>
+
+    <form class="contact-form" onsubmit="return false;">
+      <input type="text"  placeholder="Your name">
+      <input type="email" placeholder="Email address">
+      <input type="text"  placeholder="Subject">
+      <textarea           placeholder="Your message…"></textarea>
+      <button type="submit"
+        onclick="this.textContent='✅ Sent!';
+                 setTimeout(()=>this.textContent='Send Message',2500)">
+        Send Message
+      </button>
+    </form>
+  </div>
+</section>
+
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer>
+  <div class="footer-top">
+
+    <!-- Brand + Socials -->
+    <div class="footer-brand">
+      <a class="logo" href="#home" style="text-decoration:none;color:var(--text);">
+        <div class="logo-icon">
+          <img src="src/logo.jpg" alt="DevStack logo">
+        </div>
+        Dev<span style="color:var(--accent)">Stack</span>
+      </a>
+      <p>Building the next generation of developers, one commit at a time.</p>
+
+      <div class="social-icons">
+        <a href="https://youtube.com"   class="social-btn yt" target="_blank" title="YouTube">▶️</a>
+        <a href="https://github.com"    class="social-btn gh" target="_blank" title="GitHub">🐙</a>
+        <a href="https://facebook.com"  class="social-btn fb" target="_blank" title="Facebook">📘</a>
+        <a href="https://twitter.com"   class="social-btn tw" target="_blank" title="Twitter / X">🐦</a>
+        <a href="https://instagram.com" class="social-btn ig" target="_blank" title="Instagram">📸</a>
+        <button class="social-btn qr" title="QR Code" onclick="toggleQR()">📲</button>
+      </div>
+    </div>
+
+    <!-- Links -->
+    <div class="footer-links">
+      <h4>Learn</h4>
+      <a href="#">HTML &amp; CSS Basics</a>
+      <a href="#">JavaScript Mastery</a>
+      <a href="#">React Bootcamp</a>
+      <a href="#">Node.js Backend</a>
+      <a href="#">Full-Stack Path</a>
+    </div>
+
+    <div class="footer-links">
+      <h4>Company</h4>
+      <a href="#">About Us</a>
+      <a href="#">Blog</a>
+      <a href="#">Careers</a>
+      <a href="#">Press Kit</a>
+      <a href="#">Privacy Policy</a>
+    </div>
+
+    <div class="footer-links">
+      <h4>Resources</h4>
+      <a href="#">Documentation</a>
+      <a href="#">Cheatsheets</a>
+      <a href="#">Community Forum</a>
+      <a href="#">Newsletter</a>
+      <a href="#">Affiliate Program</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2025 <span>DevStack</span>. Built with ❤️ and lots of ☕ —
+       No bugs were harmed in the making of this site.</p>
+  </div>
+</footer>
+
+
+<!-- QR Popup -->
+<div class="qr-popup" id="qrPopup">
+  <canvas id="qr-canvas" width="160" height="160"></canvas>
+  <p>Scan to visit DevStack</p>
+</div>
+
+<!-- Scroll-to-top button -->
+<button class="scroll-top" id="scrollTop"
+        onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+
+<!-- ★ External JavaScript -->
+<script src="app.js"></script>
+</body>
+</html>
